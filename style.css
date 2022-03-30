@@ -1,0 +1,205 @@
+/* ------------------ */
+/* Custom properties */
+/* ----------------- */
+:root {
+  /* colors */
+  --clr-primary-100: hsl(179, 62%, 43%);
+  --clr-primary-200: hsl(179, 47%, 52%);
+  --clr-primary-300: hsl(71, 73%, 54%);
+
+  --clr-neutral-100: hsl(204, 43%, 93%);
+  --clr-neutral-200: hsl(218, 22%, 67%);
+
+  /* font size */
+  --fs-100: 1rem;
+  --fs-200: 1.35rem;
+  --fs-300: 2.2rem;
+
+  /* font fammily */
+  --ff-regular: "Karla", sans-serif;
+
+  /* --font weight */
+  --fw-100: 400;
+  --fw-200: 700;
+}
+
+/* -------------------- */
+/* Reset                */
+/* -------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Margin reset */
+body,
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+button {
+  font: inherit;
+}
+
+/* -------------------- */
+/* Utiiity classes      */
+/* -------------------- */
+.flex {
+  display: flex;
+}
+.grid {
+  display: grid;
+}
+
+/* font sizes */
+.fs-100 {
+  font-size: var(--fs-100);
+}
+.fs-200 {
+  font-size: var(--fs-200);
+}
+.fs-300 {
+  font-size: var(--fs-300);
+}
+
+/* font weights */
+.fw-100 {
+  font-weight: var(--fw-100);
+}
+.fw-200 {
+  font-weight: var(--fw-200);
+}
+
+/* text colors */
+.text-clr-primary-100 {
+  color: var(--clr-primary-100);
+}
+.text-clr-primary-300 {
+  color: var(--clr-primary-300);
+}
+.text-clr-neutral-200 {
+  color: var(--clr-neutral-200);
+}
+.text-white {
+  color: white;
+}
+
+/* background colors */
+.bg-white {
+  background-color: #fff;
+}
+.bg-clr-primary-100 {
+  background-color: var(--clr-primary-100);
+}
+.bg-clr-primary-200 {
+  background-color: var(--clr-primary-200);
+}
+.bg-clr-primary-300 {
+  background-color: var(--clr-primary-300);
+}
+
+/* setting body defaults */
+body {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+
+  min-height: 100vh;
+
+  background-color: var(--clr-neutral-100);
+
+  padding: 1rem 1.875rem;
+
+  font-family: var(--ff-regular);
+}
+
+/* ------------------ */
+/* Components         */
+/* ------------------ */
+main {
+  max-width: 41.37rem;
+
+  border-radius: 8px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+article {
+  padding: 2rem 1.5rem;
+}
+article > *:not(:first-child) {
+  margin-top: 1rem;
+}
+
+article:nth-child(1) > div > p {
+  line-height: 1.5;
+}
+article:nth-child(2) > div.flex {
+  align-items: center;
+  gap: 1rem;
+}
+article:nth-child(2) > div.flex > p {
+  opacity: 0.4;
+}
+article:nth-child(3) > div > p {
+  opacity: 0.6;
+}
+article:nth-child(3) > div > p:not(:first-child) {
+  margin-top: 0.2rem;
+}
+/* sign up button */
+.sign_up_button {
+  width: 100%;
+
+  border: none;
+  border-radius: 4px;
+
+  padding: 0.9375rem;
+  margin-top: 1.6rem !important;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  cursor: pointer;
+}
+/* border radius on main container */
+main article:first-child {
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+main article:last-child {
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+/* layout */
+main {
+  flex-wrap: wrap;
+}
+main > article {
+  flex-basis: 100%;
+}
+
+@media (min-width: 30rem) {
+  main > article {
+    flex-basis: 50%;
+  }
+  article:first-child {
+    flex-basis: 100%;
+  }
+
+  article {
+    padding: 2.5rem;
+  }
+  /* border radius on main container */
+  main article:first-child {
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+  }
+  main article:nth-child(2) {
+    border-bottom-left-radius: 6px;
+  }
+  main article:last-child {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 6px;
+  }
+}
